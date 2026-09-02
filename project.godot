@@ -14,6 +14,16 @@ config/name="g1"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+BeckettRuntime="*uid://do68dqybesb7r"
+
+[beckett]
+
+effort_schema=2
+dock_revealed=true
+effort=1
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -22,6 +32,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="g1"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/beckett/plugin.cfg")
 
 [physics]
 
