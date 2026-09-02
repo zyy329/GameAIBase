@@ -13,6 +13,7 @@
 
 ### 目录结构(仅关键目录)
 - docs/         # 项目文档
+- designos/     # GameDesignOS 设计决策 workspace (证据/实验/决策/学习)
 - scenes/       # 场景文件
 - prefabs/      # 预制体
 - scripts/      # 源码
