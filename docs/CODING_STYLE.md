@@ -12,6 +12,14 @@
 -   不使用单字母变量(循环变量 `i`,`j`,`k` 除外)
 -   不使用缩写(通用缩写如 `ID`,`UI`,`FPS` 除外)
 
+### 1.2 命名后缀规则
+
+-   `*Component`: 可复用组件(`Node` 派生),如 `HealthComponent`
+-   `*System`: 逻辑层纯 C# 类(不继承 `Node`),如 `CombatSystem`
+-   `*Event`: EventBus 事件(`readonly struct` 或 `record`),如 `PlayerDiedEvent`
+-   `*View`: 表现层接口(System 持有),如 `IPlayerView`
+-   `*Node`: Godot 节点实现(实现 IView),如 `PlayerNode`
+
 ---
 
 ## 二,文件组织
