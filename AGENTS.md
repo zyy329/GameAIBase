@@ -29,7 +29,7 @@
 跨目录规则(源码-测试对应,资源路径映射等)记录于此节
 
 ## 架构
-完整规范见`docs/ARCHITECTURE.md`;反面示例见`docs/patterns/ANTI_PATTERNS.md`;AI 强约束见`.trae/rules/architecture.md`
+完整规范见`docs/architecture/architecture.md`;反面示例见`docs/patterns/ANTI_PATTERNS.md`;AI 强约束见`.trae/rules/architecture.md`
 
 ## 代码风格
 完整规范见`docs/CODING_STYLE.md`

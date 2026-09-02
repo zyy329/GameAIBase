@@ -5,7 +5,7 @@ description: 架构强约束;仅在代码生成,修改,重构时启用;普通知
 
 # 架构强约束
 
-> 详见 docs/ARCHITECTURE.md. 本文件仅列 AI 生成代码时必须遵守的硬规则
+> 详见 docs/architecture/architecture.md. 本文件仅列 AI 生成代码时必须遵守的硬规则
 
 ## 1. 分层
 - System: 纯 C# 类, 不继承 Node, 可单测

@@ -19,6 +19,7 @@
 -   `*Event`: EventBus 事件(`readonly struct` 或 `record`),如 `PlayerDiedEvent`
 -   `*View`: 表现层接口(System 持有),如 `IPlayerView`
 -   `*Node`: Godot 节点实现(实现 IView),如 `PlayerNode`
+-   `*Data`: 数据 Resource 类(绑定 `.tres` 数据资产),如 `WeaponData`
 
 ---
 
@@ -32,14 +33,17 @@
 
 类成员按以下顺序排列:
 
-1.  常量 (`const`)
-2.  静态字段 (`static`)
-3.  实例字段(`private` 字段在前,`public` 字段在后)
-4.  属性 (`property`)
-5.  构造函数 (`constructor`)
-6.  公共方法 (`public`)
-7.  私有方法 (`private`)
-8.  嵌套类型 (`nested types`)
+1.  常量 (`const`),枚举 (`enum`) 与静态字段 (`static`)
+2.  `[Signal]` 委托声明
+3.  `[Export]` 属性
+4.  其他属性 (`property`)
+5.  实例字段(`private` 字段在前,`public` 字段在后)
+6.  构造函数 (`constructor`)
+7.  Godot 生命周期方法 (`_Ready`, `_Process`, `_PhysicsProcess`, `_Input`)
+8.  公共方法 (`public`)
+9.  私有方法 (`private`)
+10.  Signal 回调 (`On` 前缀)
+11.  嵌套类型 (`nested types`)
 
 ---
 
@@ -56,10 +60,10 @@
 
 ### 4.1 `using` 排序增补
 
-基础顺序遵循 C# 设计指南,本项目在此基础上追加如下分组(按顺序):
+基础顺序遵循 C# 设计指南,本项目按 CCGS 规则调整分组顺序(按顺序):
 
-1.  系统命名空间(`System.*`)
-2.  Godot 命名空间(**新增独立分组,与第三方库分开**)
+1.  Godot 命名空间
+2.  系统命名空间(`System.*`)
 3.  第三方库
 4.  项目命名空间
 
