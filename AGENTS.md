@@ -17,10 +17,11 @@
 - scenes/       # 场景文件
 - prefabs/      # 预制体
 - scripts/      # 源码
-  - autoload/   # 全局单例(Bootstrap, EventBus)
-  - systems/    # 逻辑层 System
-  - components/ # 组件 Component
-  - views/      # IView 接口
+  - logic/       # 纯逻辑(归 g1.Logic.csproj, TDD 目标)
+    - systems/   # 逻辑层 System
+    - views/     # IView 接口
+  - autoload/    # 全局单例(Bootstrap, EventBus)
+  - components/  # 组件 Component(Node)
 - assets/       # 静态资源
 - resources/    # 数据资产(.tres)
 - addons/       # Godot 插件

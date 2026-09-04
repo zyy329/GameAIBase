@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/scripts/">
+    <Project Path="scripts/logic/g1.Logic.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/logic/g1.Logic.Tests.csproj" />
+  </Folder>
+  <Project Path="g1.csproj" />
+</Solution>

@@ -2,3 +2,14 @@
 .godot/
 /android/
 .vscode/
+
+# .NET build artifacts (重定向到 .artifacts/, 见 Directory.Build.props)
+.artifacts/
+bin/
+obj/
+*.user
+*.suo
+.vs/
+project.lock.json
+*.nuget.props
+*.nuget.targets

@@ -1,0 +1,18 @@
+- 作用范围: g1.csproj, scripts/g1.Logic.csproj, tests/g1.Logic.Tests.csproj
++ 作用范围: g1.csproj, scripts/logic/g1.Logic.csproj, tests/logic/g1.Logic.Tests.csproj<Project>
+
+  <!--
+    统一重定向 obj/bin 到 .artifacts/, 让构建产物对 git / Godot / AI 三方隐形:
+    - git: .gitignore 排除 .artifacts/
+    - Godot: .artifacts/.gdignore 让编辑器忽略该目录
+    - AI: .artifacts/ 在点开头目录, 默认不进 AI 扫描范围
+    作用范围: g1.csproj, scripts/logic/g1.Logic.csproj, tests/logic/g1.Logic.Tests.csproj
+  -->
+
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory).artifacts\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory).artifacts\bin\$(MSBuildProjectName)\</BaseOutputPath>
+    <MSBuildProjectExtensionsPath>$(MSBuildThisFileDirectory).artifacts\obj\$(MSBuildProjectName)\</MSBuildProjectExtensionsPath>
+  </PropertyGroup>
+
+</Project>

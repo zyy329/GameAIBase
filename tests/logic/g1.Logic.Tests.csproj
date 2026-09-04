@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    纯逻辑单元测试工程, 不依赖 Godot 运行时.
+    只引用 g1.Logic.csproj, 禁止引用 g1.csproj(主工程), 确保测试与 Godot 物理隔离.
+    运行: dotnet test (无需启动 Godot 编辑器).
+    TDD 强约束: 见 .trae/rules/tdd-workflow.md
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>g1.Logic.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\scripts\logic\g1.Logic.csproj" />
+  </ItemGroup>
+
+</Project>
