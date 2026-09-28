@@ -12,10 +12,12 @@ description: "会话与概览: 初始化 `.flow` 结构(`/flow-init`), 会话恢
 - 会话恢复不自动触发, 新会话开场 AI 不做主动扫描; 用户显式 `/flow-resume` 时才执行
 
 ## init 初始化
+- 先读取 `.trae/rules/flow-core.md` 获取 UID/状态/格式等共享不变量, 再执行
 - 创建 `.flow/` 骨架: README.md, STRUCTURE.md, demand-pipeline.md, task-track/0000.md, idea-track.md, task-track/layer2/ 与 layer3/(按需扩展 layer4+)
 - `.flow/README.md` 一句话概述 + 链接(规则指向 skills 与 flow-core, 设计来源指向 docs/architecture/flow-design.md)
 - 根文件 0000.md 模板: frontmatter(uid="0000", title=项目名, description) + 第一层 5-8 个生命周期主阶段条目, 每行状态 `.`, 子UID `-`, 如 需求分析/架构设计/MVP/DEMO/1.0/1.1
-- 幂等: 已存在文件跳过, 缺失文件补齐
+- 仅当用户显式要求一次性建立更深层(L2+)时, 才在 init 阶段扩展多层; UID 分配严格遵循 flow-core 的单一全局顺序(max+1), 严禁按层级/父级分段预留, 建立顺序即为分配顺序
+- 幂等: 已存在文件跳过, 缺失文件补齐. 根文件 0000.md 已存在时, 不重排其 UID/子UID
 
 ## resume 会话恢复
 1. 读根文件 0000.md, 按 SEQ 扫描跳过状态 `x`, 找第一个非 `x` 任务
