@@ -1,6 +1,6 @@
 ---
 name: flow-idea
-description: "创意轨道操作: 添加/更新/升格创意, 维护 `.flow/idea-track.md` 点子池; 触发方式 `/flow-idea-add|update|promote` 或自然语言"
+description: "创意轨道操作: 添加/更新/升格创意, 维护 `.flow/idea-track.md` 点子池; 触发方式 `/flow-idea add|update|promote` 或自然语言"
 ---
 
 # Flow Idea Skill
@@ -8,7 +8,8 @@ description: "创意轨道操作: 添加/更新/升格创意, 维护 `.flow/idea
 创意轨道操作. 升格时先读取 `.trae/rules/flow-core.md`.
 
 ## 触发
-- 斜杠命令: `/flow-idea-add` `/flow-idea-update` `/flow-idea-promote`
+- 斜杠入口: `/flow-idea`
+- 子操作(加载后通过自然语言指定): `/flow-idea add` 添加 / `/flow-idea update` 更新 / `/flow-idea promote` 升格
 - 自然语言: 如 "记录一个创意: 动态天气系统", "把创意 'xxx' 升格为任务"
 
 ## 表格格式
@@ -28,7 +29,7 @@ description: "创意轨道操作: 添加/更新/升格创意, 维护 `.flow/idea
 
 ### promote 升格为任务
 1. 加载 flow-core
-2. 按 /flow-task-create 流程在任务轨道创建任务(分配 UID/SEQ, 写父引用, 更新 demand-pipeline.md)
+2. 委托 `/flow-task create` 全流程在任务轨道创建任务(分配 UID/SEQ, 写父引用, 概览构建刷新 demand-pipeline.md); 本 skill 不直接写 task-track 与 demand-pipeline.md(写路径单一入口, 见 flow-core)
 3. 从 idea-track.md 删除该行, 序号留空不补位
 
 设计来源: [flow-design.md](../../docs/architecture/flow-design.md)

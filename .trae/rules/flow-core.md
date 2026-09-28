@@ -7,6 +7,12 @@ description: 需求管道共享不变量(UID生成/SEQ重排/状态收敛/layerN
 
 需求管道(flow-task/flow-idea/flow-init)共享不变量, 只在此处定义一处. flow-task 创建任务/子文件, flow-idea 升格创建任务, flow-init 一次性建立多层骨架时, 均先读取本文件再执行.
 
+## 写路径单一入口
+- task-track 下所有文件与 `.flow/demand-pipeline.md` 的写操作, 唯一入口是 flow-task(create/update/status/delete/move/refresh); flow skill 对它们只读
+- flow-idea promote 不直接写任务轨道与 demand-pipeline.md, 必须委托 flow-task create 全流程完成(含概览缓存刷新)
+- 任何 task-track 写操作完成后, 必须立即按 flow-task 的概览构建流程(见 flow-task SKILL.md, 下钻算法唯一真相源)刷新 demand-pipeline.md 缓存, 保证缓存与树一致
+- 例外: 用户手动编辑 task-track 或 git 切分支/合并后, 缓存可能过期, 由用户显式执行 `/flow-task refresh` 重建
+
 ## UID 生成
 - 读 `.flow/demand-pipeline.md` 最大UID记录, 新UID = max + 1, 4位补零; 起自 `0001`, 根文件固定 `0000`; 超过 `9999` 自然进位为 5 位, 无上限
 - 生成后覆盖更新 demand-pipeline.md 的最大UID记录
