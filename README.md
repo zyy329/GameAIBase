@@ -1,43 +1,34 @@
-# g1
+# GameAIBase
 
-> [一句话项目定位, 待补充: 这是一款什么类型的游戏, 核心体验是什么]
+个人为开发 Godot 独立游戏搭建的一组 AI 工作流, 方便后续其他项目共用该工作流
 
-## 项目简介
+## 特性
 
-[2-4 句说明: 项目背景, 解决什么问题, 给谁玩, 为什么值得做]
-
-## 项目目标
-
-- [近期目标, 如: 完成核心循环可玩原型]
-- [中期目标, 如: 完成垂直切片]
-- [远期目标, 如: 完整版发布/平台上架]
-
-## 预期形态
-
-- **类型**: [玩法类型, 如: Roguelike/Simulation/...]
-- **平台**: [PC/移动端/...]
-- **视角与交互**: [2D/3D, 操作方式]
-- **规模**: [关卡数量, 流程时长, 内容体量预期]
-- **核心循环**: [一句话描述玩家反复做什么, 为什么要反复做]
+- 以 AI 为中心的游戏开发工作流 (概念 → 设计案 → 体验浓度优化 → 规则演化)
+- 内置技能: `game-concept-architect`, `game-design-proposal-writer`, `game-experience-density-optimizer`, `paranoia-ai-system-evolver`
+- 需求管道: 创意轨道 (`/flow-idea`) 与 任务轨道 (`/flow-task`), 支持 `.flow` 会话恢复
+- 事件驱动自动化: 基于 EventBus/Bootstrap 的全局单例架构
 
 ## 技术栈
 
-- 引擎: Godot 4.7 (Mobile renderer)
+- 引擎: Godot 4.x
 - 语言: C# (.NET)
+- 文档: Markdown + 分层约定 (见 [AGENTS.md](AGENTS.md))
 
-## 工程约定与文档
+## 快速开始
 
-- 目录结构, 架构规范, 代码风格, AI 协作约定: [AGENTS.md](AGENTS.md)
-- 开发流程: [docs/process/WORKFLOW.md](docs/process/WORKFLOW.md)
-- 各一级目录细节: 见其下 `STRUCTURE.md`
-
-## 如何运行
-
-1. 安装 Godot 4.7 与 .NET SDK
+1. 安装 Godot 4.x 与 .NET SDK
 2. 用 Godot 打开本项目根目录
-3. [补充: 启动入口场景/首运行注意事项]
+3. 查看 [docs/process/WORKFLOW.md](docs/process/WORKFLOW.md) 了解开发流程
 
-## 当前状态
+## 游戏内容定位
 
-- [补充: 当前所处阶段, 如: 原型验证/垂直切片/内容生产]
-- [补充: 最近里程碑与下一步计划]
+本仓库既托管 AI 工作流, 也承载具体游戏项目 的内容定位. 游戏方向说明 (玩法定位, 核心循环, 目标) 详见 [docs/design/game-concept.md](docs/design/game-concept.md).
+
+## 文档导航
+
+- [AGENTS.md](AGENTS.md) - 工程约定与目录结构
+- [docs/process/WORKFLOW.md](docs/process/WORKFLOW.md) - 开发流程 (七阶段管线)
+- [docs/architecture/architecture.md](docs/architecture/architecture.md) - 架构规范
+- [docs/CODING_STYLE.md](docs/CODING_STYLE.md) - 代码风格
+- [LICENSE](LICENSE)
